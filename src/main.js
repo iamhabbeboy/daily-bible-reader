@@ -3,10 +3,9 @@ import App from "./App.vue";
 // import router from "./router";
 import store from "./store";
 import "./index.css";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
-library.add(faUserSecret);
 
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;
 
 new Vue({
