@@ -16,7 +16,8 @@ module.exports = {
       tiny: ".875rem",
       base: "1rem",
       lg: "1.125rem",
-      xl: "3.25rem"
+      xl: "2.5rem",
+      xxl: "3.25rem"
     },
     extend: {}
   },

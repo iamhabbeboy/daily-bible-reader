@@ -1,0 +1,160 @@
+ [{
+    "type": "sin and its penalty",
+    "verses": [
+      {
+        "text": "rm",
+        "chapter": 3,
+        "verse": 23,
+        "to": 0
+      },
+      {
+        "text": "rm",
+        "chapter": 6,
+        "verse": 23,
+        "to": 0
+      },
+      {
+        "text": "is",
+        "chapter": 59,
+        "verse": 1,
+        "to": 2
+      },
+      {
+        "text": "jr",
+        "chapter": 5,
+        "verse": 25,
+        "to": 0
+      },
+      {
+        "text": "is",
+        "chapter": 1,
+        "verse": 15,
+        "to": 0
+      },
+      {
+        "text": "jr",
+        "chapter": 2,
+        "verse": 11,
+        "to": 13
+      },
+      {
+        "text": "jr",
+        "chapter": 2,
+        "verse": 17,
+        "to": 22
+      }
+    ]
+  },
+  {
+    "type": "Repentance",
+    "verses": [
+      {
+        "text": "ez",
+        "chapter": 14,
+        "verse": 6,
+        "to": 0
+      },
+      {
+        "text": "jr",
+        "chapter": 3,
+        "verse": 13,
+        "to": 0
+      },
+      {
+        "text": "job",
+        "chapter": 11,
+        "verse": 13,
+        "to": 15
+      },
+      {
+        "text": "job",
+        "chapter": 22,
+        "verse": 21,
+        "to": 23
+      },
+      {
+        "text": "1pt",
+        "chapter": 1,
+        "verse": 23,
+        "to": 0
+      },
+      {
+        "text": "jr",
+        "chapter": 26,
+        "verse": 13,
+        "to": 0
+      },
+      {
+        "text": "ez",
+        "chapter": 33,
+        "verse": 11,
+        "to": 0
+      },
+      {
+        "text": "ez",
+        "chapter": 33,
+        "verse": 18,
+        "to": 31
+      }
+    ]
+  },
+  {
+    "type": "God Forgives",
+    "verses": [
+      {
+        "text": "is",
+        "chapter": 43,
+        "verse": 25,
+        "to": 0
+      },
+      {
+        "text": "ps",
+        "chapter": 86,
+        "verse": 5,
+        "to": 0
+      },
+      {
+        "text": "is",
+        "chapter": 1,
+        "verse": 18,
+        "to": 0
+      },
+      {
+        "text": "mi",
+        "chapter": 7,
+        "verse": 18,
+        "to": 0
+      },
+      {
+        "text": "ps",
+        "chapter": 103,
+        "verse": 3,
+        "to": 0
+      },
+      {
+        "text": "ps",
+        "chapter": 103,
+        "verse": 12,
+        "to": 0
+      },
+      {
+        "text": "ps",
+        "chapter": 104,
+        "verse": 4,
+        "to": 0
+      },
+      {
+        "text": "ml",
+        "chapter": 2,
+        "verse": 7,
+        "to": 0
+      },
+      {
+        "text": "ml",
+        "chapter": 2,
+        "verse": 10,
+        "to": 0
+      }
+    ]
+  }
+]
