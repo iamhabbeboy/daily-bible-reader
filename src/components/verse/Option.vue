@@ -7,7 +7,7 @@
       Genesis 1:1
     </span>
 
-    <span class="cursor-pointer text-white ml-3" @click="speak">
+    <span class="cursor-pointer text-white ml-3">
       <font-awesome-icon :icon="['fas', 'volume-up']" />
     </span>
     <span class="text-white cursor-pointer ml-5">
@@ -15,19 +15,3 @@
     </span>
   </h3>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      speech: new window.SpeechSynthesisUtterance(),
-      synth: window.speechSynthesis
-    };
-  },
-  methods: {
-    speak() {
-      this.speech.text = "Hello, whats up";
-      this.synth.speak(this.speech);
-    }
-  }
-};
-</script>

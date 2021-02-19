@@ -11,9 +11,17 @@ import {
   faChevronLeft,
   faChevronRight,
   faVolumeUp,
-  faSearch
+  faSearch,
+  faCog
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faBible, faChevronLeft, faChevronRight, faVolumeUp, faSearch);
+library.add(
+  faBible,
+  faChevronLeft,
+  faChevronRight,
+  faVolumeUp,
+  faSearch,
+  faCog
+);
 export default {
   components: {
     BaseBible
