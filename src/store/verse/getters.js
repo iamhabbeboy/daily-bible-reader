@@ -1,6 +1,14 @@
 export default {
   verses(state) {
-    return state.verses;
+    return state.verse;
+  },
+
+  isLoading(state) {
+    return state.isLoading;
+  },
+
+  pagination(state) {
+    return state.pagination;
   },
 
   errors(state) {

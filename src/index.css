@@ -3,12 +3,12 @@
 @tailwind utilities;
 
  body {
-   background: #000;
-    /* background: url('assets/bg-4.jpg') no-repeat center center fixed; 
+   /* background: #000; */
+    background: url('assets/bg-4.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; */
+    background-size: cover;
 } 
 
 /* html { 

@@ -147,13 +147,7 @@
         "text": "ml",
         "chapter": 2,
         "verse": 7,
-        "to": 0
-      },
-      {
-        "text": "ml",
-        "chapter": 2,
-        "verse": 10,
-        "to": 0
+        "to": 10
       }
     ]
   }

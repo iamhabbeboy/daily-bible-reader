@@ -1,15 +1,27 @@
 <template>
   <h1 class="text-xl text-white">
-    In the beginning, the Lord created the heaven and the earth
-    {{ verses }}
+    <span v-if="loading">
+      <img :src="imageLoader" />
+    </span>
+    {{ verse }}
   </h1>
 </template>
 <script>
 export default {
   props: {
-    verses: {
+    verse: {
+      type: String,
+      required: true
+    },
+    loading: {
+      type: Boolean,
       required: true
     }
+  },
+  data() {
+    return {
+      imageLoader: require("../../../public/golden.svg")
+    };
   }
 };
 </script>
