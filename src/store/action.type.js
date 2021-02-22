@@ -1,1 +1,1 @@
-export const FETCH_BIBLE_TEXTS = "fetchBibleTexts";
+export const FETCH_BIBLE_TEXT = "fetchBibleTexts";

@@ -1,5 +1,5 @@
 import { FETCH_BIBLE_TEXTS } from "./action.type";
-import { SET_BIBLE_TEXTS, FETCH_START } from "./mutations.type";
+// import { SET_BIBLE_TEXTS, FETCH_START } from "./mutations.type";
 import { HelperService } from "@/common/api.service";
 
 const initialState = {
