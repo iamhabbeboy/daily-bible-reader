@@ -41,6 +41,6 @@ export default class Verse {
    * @param {object} payload
    */
   _filter(payload) {
-    return payload.verses[5];
+    return payload.verses[6];
   }
 }
