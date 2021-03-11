@@ -1,4 +1,5 @@
 import Request from "./Request";
+import books from "@/data/books.json";
 export default class Bible extends Request {
   constructor() {
     super();
@@ -7,11 +8,17 @@ export default class Bible extends Request {
    * Retrieve bible verses from api
    * Look up book from bible
    * @param {string} text
-   * @return Object
+   * @returns Object
    */
   async fetchBook(text) {
     const verses = await this.get();
-    // const verses = { payload: [] };
     return verses.data.find(verse => verse.abbrev === text);
+  }
+  /**
+   * Retrieve json books
+   * @returns object
+   */
+  async getChapters() {
+    return await books;
   }
 }

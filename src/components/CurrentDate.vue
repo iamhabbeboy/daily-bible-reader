@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h1 class="text-xxl text-gray-50 ">
+  <div class="sm:p-0 p-3">
+    <h1 class="sm:text-xxl text-xl text-gray-50">
       {{ getTime }}
     </h1>
-    <h4 class="text-gray-100">Thur Feb. 18th</h4>
+    <h2 class="text-gray-100">Thur Feb. 18th</h2>
   </div>
 </template>
 

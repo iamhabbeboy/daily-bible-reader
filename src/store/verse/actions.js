@@ -4,11 +4,12 @@ import { FETCH_BIBLE_PAGE, FETCH_BIBLE_TEXT } from "../action.type";
 import { SET_BIBLE_PAGE, SET_BIBLE_TEXT, SET_ERROR } from "../mutations.type";
 
 export default {
-  async [FETCH_BIBLE_TEXT]({ commit }) {
+  async [FETCH_BIBLE_TEXT]({ commit }, book) {
     try {
-      const verses = await new Verse(new Bible()).getBibleText();
+      const verses = await new Verse(new Bible()).getBibleText(book);
       commit(SET_BIBLE_TEXT, verses);
     } catch (e) {
+      console.log(e);
       commit(SET_ERROR, { type: "API service", message: e.message });
     }
   },

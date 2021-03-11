@@ -1,4 +1,7 @@
-const initialState = {
-  foo: "bar"
+export default {
+  books: {
+    book: "",
+    chapters: 0,
+    verses: []
+  }
 };
-export const state = { ...initialState };

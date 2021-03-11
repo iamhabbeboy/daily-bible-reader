@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-xl text-white">
+  <h1 class="sm:text-xl text-lg text-white">
     <span v-if="loading">
       <img :src="imageLoader" />
     </span>

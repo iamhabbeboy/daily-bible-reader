@@ -1,5 +1,7 @@
 <template>
-  <span>
-    <slot name="header">Default Header</slot>
-  </span>
+  <div>
+    <template name="header">
+      <slot>This is the head</slot>
+    </template>
+  </div>
 </template>

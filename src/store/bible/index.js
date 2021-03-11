@@ -1,11 +1,11 @@
-import { FETCH_BIBLE } from "./actions.type";
-import Verse from "@/services/Verse";
-import { GET_BIBLE } from "./mutations.type";
+import state from "./states";
+import getters from "./getters";
+import actions from "./actions";
+import mutations from "./mutations";
 
-export const actions = {
-  [FETCH_BIBLE]({ commit }) {
-    const a = new Verse();
-    a.getJson();
-    commit(GET_BIBLE, "Hello world");
-  }
+export default {
+  state,
+  getters,
+  actions,
+  mutations
 };

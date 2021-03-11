@@ -1,11 +1,11 @@
 <template>
   <div
     class=" px-6 my-20 mx-auto p-10 rounded-md 
-    bg-gray-700 w-8/12 bg-opacity-30 shadow-md "
+    bg-gray-700 sm:w-8/12 w-11/12 bg-opacity-30 shadow-md "
   >
     <Header />
     <Content :verse="getBibleText" :loading="isLoading" />
-    <div class="flex mt-5">
+    <div class="sm:flex block mt-5">
       <Pagination :total-pages="getTotalPages" :verse="getVerse" />
       <Option />
     </div>
@@ -40,7 +40,7 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch(FETCH_BIBLE_TEXT);
+    this.$store.dispatch(FETCH_BIBLE_TEXT, undefined);
   }
 };
 </script>
