@@ -1,5 +1,8 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    :style="imageNumber === 0 ? getBackgroundColor : getBackgroundImage"
+  >
     <BaseBible />
   </div>
 </template>
@@ -14,6 +17,7 @@ import {
   faSearch,
   faCog
 } from "@fortawesome/free-solid-svg-icons";
+import { mapGetters } from "vuex";
 library.add(
   faBible,
   faChevronLeft,
@@ -25,6 +29,29 @@ library.add(
 export default {
   components: {
     BaseBible
-  }
+  },
+  computed: {
+    ...mapGetters(["imageNumber"]),
+    getBackgroundImage() {
+      const image = {};
+      const imagePath = require(`@/assets/bg-${this.imageNumber}.jpg`);
+      image.backgroundImage = `url('${imagePath}')`;
+      image.backgroundPosition = "center center";
+      image.backgroundSize = "cover";
+      image.backgroundRepeat = "no-repeat";
+      image.backgroundAttachment = "fixed";
+      return image;
+    }
+  },
+  data: () => ({
+    getBackgroundColor: {
+      backgroundColor: "#000"
+    }
+  })
 };
 </script>
+<style>
+#app {
+  height: 100vh;
+}
+</style>

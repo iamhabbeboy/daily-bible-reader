@@ -11,7 +11,7 @@
         {{ verse.book | capitalize }}
         <span>{{ verse.chapter }}</span>
         :
-        <span>{{ page }}{{ verseTo }}</span>
+        <span>{{ verseFrom }}{{ verseTo }}</span>
       </span>
 
       <span class="cursor-pointer text-white ml-3">
@@ -91,6 +91,7 @@ import mixinModal from "@/mixins/modal";
 import mixinTextCase from "@/filters/capitalize";
 import {
   FETCH_BIBLE_BOOKS,
+  // eslint-disable-next-line no-unused-vars
   FETCH_BIBLE_PAGE,
   FETCH_BIBLE_TEXT
 } from "../../store/action.type";
@@ -100,8 +101,17 @@ export default {
   mixins: [mixinTextCase, mixinModal],
   computed: {
     ...mapGetters(["books", "isLoading", "pagination"]),
+    verseFrom() {
+      return this.verse
+        ? isNaN(this.verse.verse)
+          ? 1
+          : parseInt(this.verse.verse) + 1
+        : 1;
+    },
     verseTo() {
-      return this.verse.to ? " - " + (parseInt(this.verse.to) + 1) : "";
+      return this.verse
+        ? " - " + (isNaN(this.verse.to) ? 1 : parseInt(this.verse.to) + 1)
+        : 1;
     }
   },
   props: {
@@ -115,7 +125,7 @@ export default {
     }
   },
   data: () => ({
-    page: 1,
+    page: 0,
     chapters: 0,
     verses: 0,
     verseStart: 0,
@@ -125,13 +135,22 @@ export default {
     bookIndex: 0
   }),
   watch: {
-    page: function(newPage) {
-      this.$store.dispatch(FETCH_BIBLE_PAGE, newPage);
-    },
     status: function(newStatus) {
       if (newStatus) {
         this.$store.dispatch(FETCH_BIBLE_BOOKS);
       }
+    },
+    page: function(oldPage, newPage) {
+      this.verse.verse = this.verse.verse + 1;
+      console.log(this.verse.verse);
+      console.log(oldPage);
+      // console.log(this.verse.contents[oldPage]);
+      // console.log(this.verse.verse);
+      // const totalPage = this.totalPages - 1;
+      // let test =
+      //   newPage >= totalPage ? this.verse.verse - 1 : this.verse.verse + 1;
+      // console.log(oldPage, newPage, totalPage);
+      this.$store.dispatch(FETCH_BIBLE_PAGE, newPage);
     }
   },
   methods: {
@@ -140,7 +159,7 @@ export default {
       this.page = page;
     },
     next() {
-      const totalPage = this.totalPages;
+      const totalPage = this.totalPages - 1;
       let page = this.page >= totalPage ? totalPage : this.page + 1;
       this.page = page;
     },
@@ -161,11 +180,13 @@ export default {
       const verses = this.verseStart;
       const [alias] = this.book.split("-").slice(-1);
       const chapter = this.chapter;
-      const data = { text: alias, chapter: chapter, verse: verses };
+      const data = {
+        text: alias,
+        chapter: chapter,
+        verse: verses,
+        to: this.verses
+      };
       this.$store.dispatch(FETCH_BIBLE_TEXT, data);
-      this.status = false;
-    },
-    closeModal() {
       this.status = false;
     }
   }

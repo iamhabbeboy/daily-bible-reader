@@ -1,3 +1,4 @@
 export default {
-  status: false
+  status: false,
+  imageNumber: 0
 };

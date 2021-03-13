@@ -10,6 +10,10 @@ export default {
   methods: {
     openModal() {
       this.status = true;
+    },
+
+    closeModal() {
+      this.status = false;
     }
   }
 };

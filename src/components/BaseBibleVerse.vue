@@ -17,7 +17,7 @@ import Option from "@/components/verse/Option";
 import Header from "@/components/verse/Header";
 import Content from "@/components/verse/Content";
 import Pagination from "@/components/verse/Pagination";
-import { FETCH_BIBLE_TEXT } from "../store/action.type";
+import { FETCH_BIBLE_TEXT, FETCH_BIBLE_PAGE } from "../store/action.type";
 
 export default {
   components: {
@@ -26,11 +26,24 @@ export default {
     Pagination,
     Option
   },
+  data: () => ({
+    page: 0
+  }),
+  watch: {
+    pagination: function(oldValue, newValue) {
+      console.log(oldValue, newValue);
+    }
+  },
   computed: {
     ...mapGetters(["verses", "isLoading", "pagination"]),
     getBibleText() {
-      let page = this.pagination || 1;
-      return this.verses.contents[page - 1].text;
+      let page = this.pagination || 1,
+        pageIndex = page - 1;
+      console.log(this.verses.contents[pageIndex]);
+      console.log(pageIndex);
+      return this.verses && this.verses.contents[pageIndex]
+        ? this.verses.contents[pageIndex].text + " - " + pageIndex
+        : "";
     },
     getTotalPages() {
       return this.verses.contents.length;
@@ -41,6 +54,9 @@ export default {
   },
   mounted() {
     this.$store.dispatch(FETCH_BIBLE_TEXT, undefined);
+    const currentPage = this.verses.chapter || 0;
+    this.$store.dispatch(FETCH_BIBLE_PAGE, currentPage);
+    console.log(this.pagination);
   }
 };
 </script>

@@ -9,7 +9,6 @@ export default {
       const verses = await new Verse(new Bible()).getBibleText(book);
       commit(SET_BIBLE_TEXT, verses);
     } catch (e) {
-      console.log(e);
       commit(SET_ERROR, { type: "API service", message: e.message });
     }
   },

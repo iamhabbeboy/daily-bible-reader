@@ -1,11 +1,11 @@
 const initialState = {
   isLoading: true,
   verse: {
-    book: "",
-    chapter: 0,
+    book: "Genesis",
+    chapter: 1,
     contents: [
       {
-        verse: 0,
+        verse: 1,
         text: "In the beginning, the Lord created the heaven and the earth."
       }
     ]
