@@ -68,6 +68,8 @@
 <script>
 import mixinModal from "@/mixins/modal";
 import { FETCH_IMAGE_SELECTED } from "../store/action.type";
+import { BACKGROUND_IMAGE_KEY } from "@/common/config";
+import storage from "@/services/Localstorage";
 import { mapGetters } from "vuex";
 
 export default {
@@ -84,6 +86,7 @@ export default {
   methods: {
     changeBackgroundImage(e) {
       const imageSelected = e.target.getAttribute("alt");
+      storage.setKey(BACKGROUND_IMAGE_KEY, imageSelected);
       this.$store.dispatch(FETCH_IMAGE_SELECTED, imageSelected);
     }
   }

@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="app"
-    :style="imageNumber === 0 ? getBackgroundColor : getBackgroundImage"
-  >
+  <div id="app" :style="changeBackgroundImage">
     <BaseBible />
   </div>
 </template>
@@ -18,6 +15,9 @@ import {
   faCog
 } from "@fortawesome/free-solid-svg-icons";
 import { mapGetters } from "vuex";
+import { BACKGROUND_IMAGE_KEY } from "@/common/config";
+import storage from "@/services/Localstorage";
+
 library.add(
   faBible,
   faChevronLeft,
@@ -32,9 +32,18 @@ export default {
   },
   computed: {
     ...mapGetters(["imageNumber"]),
+    changeBackgroundImage() {
+      return this.getImageNumber === 0 && !this.imageNumber
+        ? this.getBackgroundColor
+        : this.getBackgroundImage;
+    },
+    getImageNumber() {
+      return storage.getKey(BACKGROUND_IMAGE_KEY) || 0;
+    },
     getBackgroundImage() {
       const image = {};
-      const imagePath = require(`@/assets/bg-${this.imageNumber}.jpg`);
+      let imageId = !this.imageNumber ? this.getImageNumber : this.imageNumber;
+      const imagePath = require(`@/assets/bg-${imageId}.jpg`);
       image.backgroundImage = `url('${imagePath}')`;
       image.backgroundPosition = "center center";
       image.backgroundSize = "cover";
